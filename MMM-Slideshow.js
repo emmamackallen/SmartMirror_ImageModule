@@ -1,7 +1,7 @@
 Module.register('MMM-ImageSlideshow', {
 
     defaults: {
-      imagePath: '/path/to/images',
+      imagePath: 'modules/SmartMirror_PhotModule/Emma_Pics',
       validExtensions: ['jpg', 'jpeg', 'png', 'gif'],
       slideshowSpeed: 5000
     },
@@ -19,9 +19,9 @@ Module.register('MMM-ImageSlideshow', {
     },
   
     show: function() {
-      const wrapper = document.createElement('div');
+      var wrapper = document.createElement('div');
       wrapper.className = 'slideshow-wrapper';
-      const image = document.createElement('img');
+      var image = document.createElement('img');
       image.className = 'slideshow-image';
       wrapper.appendChild(image);
     }
