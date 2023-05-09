@@ -1,20 +1,13 @@
-const NodeHelper = require('node_helper');
-const fs = require('fs');
-const moment = require('moment');
+var NodeHelper = require('node_helper');
+var fs = require('fs');
+/* const moment = require('moment'); */
 
 module.exports = NodeHelper.create({
 
   start: function() {
     this.images = [];
     this.currentIndex = 0;
-    this.config = {};
-  },
-
-  socketNotificationReceived: function(notification, payload) {
-    if (notification === 'IMAGE_SLIDESHOW_CONFIG') {
-      this.config = payload;
-      this.loadImages();
-    }
+    this.config = [];
   },
 
   loadImages: function() {
@@ -46,7 +39,15 @@ module.exports = NodeHelper.create({
     if (this.currentIndex === this.images.length) {
       this.currentIndex = 0;
     }
-  }
+  },
+  
+  socketNotificationReceived: function(notification, payload) {
+    if (notification === 'IMAGE_SLIDESHOW_CONFIG') {
+      // this.config = payload;
+      this.config.push(payload);
+      this.loadImages();
+    }
+  },
 
 });
 
