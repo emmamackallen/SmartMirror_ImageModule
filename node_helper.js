@@ -11,11 +11,11 @@ module.exports = NodeHelper.create({
   },
 
   loadImages: function() {
-    const self = this;
+    var self = this;
     fs.readdir(this.config.imagePath, function(err, files) {
       if (err) throw err;
       files.forEach(function(file) {
-        const extension = file.split('.').pop();
+        var extension = file.split('.').pop();
         if (self.config.validExtensions.indexOf(extension) !== -1) {
           self.images.push(file);
         }
@@ -30,7 +30,7 @@ module.exports = NodeHelper.create({
   },
 
   nextImage: function() {
-    const payload = {
+    var payload = {
       image: this.images[this.currentIndex],
       timestamp: moment().format('MMMM Do YYYY, h:mm:ss a')
     };
