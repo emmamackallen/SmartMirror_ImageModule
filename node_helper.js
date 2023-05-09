@@ -1,6 +1,5 @@
 var NodeHelper = require('node_helper');
 var fs = require('fs');
-/* const moment = require('moment'); */
 
 module.exports = NodeHelper.create({
 
@@ -30,10 +29,7 @@ module.exports = NodeHelper.create({
   },
 
   nextImage: function() {
-    var payload = {
-      image: this.images[this.currentIndex],
-      timestamp: moment().format('MMMM Do YYYY, h:mm:ss a')
-    };
+    var payload = {image: this.images[this.currentIndex]};
     this.sendSocketNotification('IMAGE_SLIDESHOW_NEXT_IMAGE', payload);
     this.currentIndex++;
     if (this.currentIndex === this.images.length) {
