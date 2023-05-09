@@ -1,7 +1,7 @@
 Module.register('MMM-ImageSlideshow', {
 
     defaults: {
-      imagePath: 'modules/SmartMirror_PhotModule/Emma_Pics',
+      imagePath: 'modules/SmartMirror_PhotoModule/Emma_Pics',
       validExtensions: ['jpg', 'jpeg', 'png', 'gif'],
       slideshowSpeed: 5000
     },
