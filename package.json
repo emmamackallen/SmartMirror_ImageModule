@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Displays a slideshow of images in the bottom left of the MagicMirror display",
     "dependencies": {
-      "moment": "^2.29.1",
       "fs": "0.0.1-security"
     }
 }
